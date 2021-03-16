@@ -40,3 +40,371 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title goes here"], ["description", "Desc goes here.."], ["created_at", "2021-03-15 18:08:43.626014"], ["updated_at", "2021-03-15 18:08:43.626014"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2021-03-16 02:23:45.104225"], ["updated_at", "2021-03-16 02:23:45.104225"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2021-03-15 22:27:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (11.0ms)
+Completed 200 OK in 150ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-15 22:27:31 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 495ms (Views: 482.9ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/posts" for ::1 at 2021-03-15 22:36:50 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ukp/TIgUZZS3aIKfAIVpOXMPU0F3TEjINWrveLz7zGMp9Uy1dDIvWXxoPoF5HomZiNzdAPZek2nzzXq2mSPSDQ==", "title"=>"Hello", "description"=>"a book", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hello"], ["description", "a book"], ["created_at", "2021-03-16 02:36:50.466231"], ["updated_at", "2021-03-16 02:36:50.466231"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 47ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-15 22:45:05 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 60ms (Views: 55.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2021-03-15 22:45:13 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gC1t2z2ysCY/KmAXTIbH3RGf0hiwxqGvDM3KMJndoJn7kl4iwZT66/Qq3Ak1HSd96kxcWTHUeg7Kal/+vAW+9w==", "title"=>"Hello", "description"=>"a book", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hello"], ["description", "a book"], ["created_at", "2021-03-16 02:45:13.479334"], ["updated_at", "2021-03-16 02:45:13.479334"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 10ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/posts/5" for ::1 at 2021-03-15 22:45:13 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 38ms (Views: 24.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/index" for ::1 at 2021-03-15 22:46:09 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=index):
+  
+app/controllers/posts_controller.rb:7:in `show'
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.9ms)
+Started POST "/posts" for ::1 at 2021-03-15 22:46:33 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gC1t2z2ysCY/KmAXTIbH3RGf0hiwxqGvDM3KMJndoJn7kl4iwZT66/Qq3Ak1HSd96kxcWTHUeg7Kal/+vAW+9w==", "title"=>"The Hunger Games", "description"=>"unread book", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "The Hunger Games"], ["description", "unread book"], ["created_at", "2021-03-16 02:46:33.396016"], ["updated_at", "2021-03-16 02:46:33.396016"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 7ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/posts/6" for ::1 at 2021-03-15 22:46:33 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 65ms (Views: 54.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for ::1 at 2021-03-15 22:47:00 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-15 22:50:16 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 271ms (Views: 258.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/posts" for ::1 at 2021-03-15 22:50:38 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JtnjSwuDsqXPasurRkMlunCYzE1w0ssy43rl4MsGrRpdZtCy96X4aARqd7U/2MUai0tCDPHAEJMl3XAu7t6zdA==", "title"=>"Be strong", "description"=>"support", "commit"=>"Submit Post"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Be strong"], ["description", "support"], ["created_at", "2021-03-16 02:50:38.877386"], ["updated_at", "2021-03-16 02:50:38.877386"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts.7
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/posts.7" for ::1 at 2021-03-15 22:50:38 -0400
+Processing by PostsController#index as 
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 20.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts.7" for ::1 at 2021-03-15 23:11:25 -0400
+Processing by PostsController#index as 
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 77ms (Views: 70.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/posts" for ::1 at 2021-03-15 23:11:30 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JtnjSwuDsqXPasurRkMlunCYzE1w0ssy43rl4MsGrRpdZtCy96X4aARqd7U/2MUai0tCDPHAEJMl3XAu7t6zdA==", "title"=>"Be strong", "description"=>"support", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Be strong"], ["description", "support"], ["created_at", "2021-03-16 03:11:30.403922"], ["updated_at", "2021-03-16 03:11:30.403922"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/8
+Completed 302 Found in 7ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/posts/8" for ::1 at 2021-03-15 23:11:30 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 19.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/8" for ::1 at 2021-03-15 23:12:07 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 21ms (Views: 14.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2021-03-15 23:12:18 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JtnjSwuDsqXPasurRkMlunCYzE1w0ssy43rl4MsGrRpdZtCy96X4aARqd7U/2MUai0tCDPHAEJMl3XAu7t6zdA==", "title"=>"In love", "description"=>"romantic", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "In love"], ["description", "romantic"], ["created_at", "2021-03-16 03:12:18.126052"], ["updated_at", "2021-03-16 03:12:18.126052"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/9
+Completed 302 Found in 7ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/posts/9" for ::1 at 2021-03-15 23:12:18 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2021-03-15 23:12:48 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-15 23:13:28 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"posts"} missing required keys: [:id]):
+    1: <%= form_tag post_path do %>
+    2:   <label>Post title:</label><br>
+    3:   <%= text_field_tag :title %><br>
+    4: 
+  
+app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__4423238136221227244_70250461987880'
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.7ms)
+Started GET "/posts/show" for ::1 at 2021-03-15 23:13:47 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=show):
+  
+app/controllers/posts_controller.rb:7:in `show'
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.2ms)
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.9ms)
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.4ms)
+Started GET "/posts/new" for ::1 at 2021-03-15 23:13:51 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"posts"} missing required keys: [:id]):
+    1: <%= form_tag post_path do %>
+    2:   <label>Post title:</label><br>
+    3:   <%= text_field_tag :title %><br>
+    4: 
+  
+app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__4423238136221227244_70250533319380'
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.0ms)
+Started GET "/posts/9" for ::1 at 2021-03-15 23:13:59 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-15 23:14:29 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"posts"} missing required keys: [:id]):
+    1: <%= form_tag post_path do %>
+    2:   <label>Post title:</label><br>
+    3:   <%= text_field_tag :title %><br>
+    4: 
+  
+app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__4423238136221227244_70250542016080'
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /Users/yuringuyen/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.8ms)
+Started GET "/posts/new" for ::1 at 2021-03-15 23:14:41 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2021-03-15 23:14:52 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-15 23:15:15 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 115ms (Views: 113.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2021-03-15 23:20:45 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HmF4fpeOYMs/IXI6wToZt876N4vZbKinucIpY7DGrQNl3kuHa6gqBvQhziS4ofkXNSm5ylh+cwZ/ZbytlR6zbQ==", "title"=>"To all the boys I have loved before", "description"=>"romance", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "To all the boys I have loved before"], ["description", "romance"], ["created_at", "2021-03-16 03:20:45.363486"], ["updated_at", "2021-03-16 03:20:45.363486"]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/10
+Completed 302 Found in 7ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/posts/10" for ::1 at 2021-03-15 23:20:45 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/10" for ::1 at 2021-03-15 23:22:17 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 14.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2021-03-15 23:22:20 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HmF4fpeOYMs/IXI6wToZt876N4vZbKinucIpY7DGrQNl3kuHa6gqBvQhziS4ofkXNSm5ylh+cwZ/ZbytlR6zbQ==", "title"=>"To all the boys I have loved before", "description"=>"romance", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "To all the boys I have loved before"], ["description", "romance"], ["created_at", "2021-03-16 03:22:20.597304"], ["updated_at", "2021-03-16 03:22:20.597304"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts.11
+Completed 302 Found in 7ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/posts.11" for ::1 at 2021-03-15 23:22:20 -0400
+Processing by PostsController#index as 
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 27ms (Views: 22.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2021-03-15 23:22:32 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.3ms)
+
+
